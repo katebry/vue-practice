@@ -1,3 +1,7 @@
+function getRandomValue(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 const app = Vue.createApp({
   data() {
     return {
@@ -7,9 +11,12 @@ const app = Vue.createApp({
   },
   methods: {
     attackMonster() {
-      // formula for calculating a random number between 12 and 5
-      const attackValue = Math.floor(Math.random() * (12 - 5) + 5);
+      const attackValue = getRandomValue(5, 12);
       this.monsterHealth -= attackValue;
+    },
+    attackPlayer() {
+      const attackValue = getRandomValue(8, 12);
+      this.playerHealth -= attackValue;
     },
   },
 });
