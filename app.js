@@ -51,6 +51,9 @@ const app = Vue.createApp({
       this.currentRound = 0;
       this.winner = null;
     },
+    surrender() {
+      this.winner = "monster";
+    },
     attackMonster() {
       this.currentRound++;
       const attackValue = getRandomValue(5, 12);
